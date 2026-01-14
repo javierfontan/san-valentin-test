@@ -47,6 +47,8 @@ mi-proyecto/
 - **Filtros interactivos** por categoría, precio y fecha
 - **Grid de experiencias** con cards interactivas
 - **Footer** con enlaces y información
+- **SEO Optimizado** con meta tags, Schema.org, sitemap y robots.txt
+- **Accesibilidad** con ARIA labels y estructura semántica
 
 ## 🛠️ Tecnologías
 
@@ -54,6 +56,9 @@ mi-proyecto/
 - CSS3 con variables personalizadas
 - JavaScript vanilla (sin dependencias)
 - Google Fonts (Inter)
+- Schema.org JSON-LD para SEO
+- Open Graph y Twitter Cards
+- Sitemap.xml y robots.txt
 
 ## 📝 Personalización
 
@@ -61,6 +66,22 @@ Puedes modificar:
 - Colores en `:root` de `styles.css`
 - Datos de experiencias en `experiencesData` de `script.js`
 - Contenido en `index.html`
+- Meta tags SEO en el `<head>` de `index.html`
+- Schema.org data en los scripts JSON-LD
+
+## 🔍 SEO
+
+La página está completamente optimizada para SEO:
+- ✅ Meta tags completos (title, description, keywords)
+- ✅ Open Graph y Twitter Cards
+- ✅ Schema.org JSON-LD (Event, WebSite, BreadcrumbList)
+- ✅ Sitemap.xml y robots.txt
+- ✅ Estructura semántica HTML5
+- ✅ ARIA labels para accesibilidad
+- ✅ URLs canónicas
+- ✅ Geo tags para Madrid
+
+Ver `SEO-CHECKLIST.md` para más detalles.
 
 ## Contribuir
 

@@ -172,13 +172,13 @@ const experiencesData = [
 
 // Category titles mapping
 const categoryTitles = {
-    all: "All Experiences",
-    candlelight: "🕯️ Candlelight Experiences",
-    "valentines-specials": "Valentines Specials",
-    concerts: "Concerts, musicals and theater",
-    food: "Food Experiences",
-    workshops: "Workshops and activities",
-    wellness: "Wellness and relaxation"
+    all: "Todas las Experiencias",
+    candlelight: "🕯️ Experiencias Candlelight",
+    "valentines-specials": "Especiales de San Valentín",
+    concerts: "Conciertos, musicales y teatro",
+    food: "Experiencias Gastronómicas",
+    workshops: "Talleres y actividades",
+    wellness: "Bienestar y relajación"
 };
 
 // State
@@ -201,16 +201,21 @@ function renderTopPicks() {
         .sort((a, b) => a.rank - b.rank);
 
     topPicksContainer.innerHTML = topPicks.map(exp => `
-        <div class="top-pick-card">
-            <div class="top-pick-badge">#${exp.rank}♥ TOP PICK</div>
-            <div class="top-pick-image">🕯️</div>
+        <article class="top-pick-card" role="listitem" itemscope itemtype="https://schema.org/Event">
+            <div class="top-pick-badge" aria-label="Top pick número ${exp.rank}">#${exp.rank}♥ TOP PICK</div>
+            <div class="top-pick-image" role="img" aria-label="Experiencia ${exp.title} en ${exp.location}">🕯️</div>
             <div class="top-pick-content">
-                <h3 class="top-pick-title">${exp.title}</h3>
-                <div class="top-pick-location">📍 ${exp.location}</div>
-                <div class="top-pick-price">From ${exp.price}€</div>
-                <button class="top-pick-btn" onclick="handleGetTickets(${exp.id})">Get Tickets →</button>
+                <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
+                <div class="top-pick-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                    <span itemprop="name">📍 ${exp.location}</span>
+                </div>
+                <div class="top-pick-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <span itemprop="price" content="${exp.price}">Desde ${exp.price}€</span>
+                    <meta itemprop="priceCurrency" content="EUR">
+                </div>
+                <button class="top-pick-btn" onclick="handleGetTickets(${exp.id})" aria-label="Comprar entradas para ${exp.title}">Comprar Entradas →</button>
             </div>
-        </div>
+        </article>
     `).join('');
 }
 
@@ -255,23 +260,28 @@ function renderExperiences() {
     });
     
     if (filtered.length === 0) {
-        gridContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 2rem; color: var(--text-light);">No experiences found matching your filters.</p>';
+        gridContainer.innerHTML = '<p style="text-align: center; grid-column: 1/-1; padding: 2rem; color: var(--text-light);" role="status" aria-live="polite">No se encontraron experiencias que coincidan con tus filtros.</p>';
         return;
     }
     
     gridContainer.innerHTML = filtered.map(exp => `
-        <div class="experience-card" onclick="handleGetTickets(${exp.id})">
-            <div class="experience-image">🕯️</div>
+        <article class="experience-card" role="listitem" itemscope itemtype="https://schema.org/Event" onclick="handleGetTickets(${exp.id})">
+            <div class="experience-image" role="img" aria-label="Experiencia ${exp.title}">🕯️</div>
             <div class="experience-content">
-                <h3 class="experience-title">${exp.title}</h3>
-                <div class="experience-location">📍 ${exp.location}</div>
-                <div class="experience-date">📅 ${exp.date}</div>
+                <h3 class="experience-title" itemprop="name">${exp.title}</h3>
+                <div class="experience-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                    <span itemprop="name">📍 ${exp.location}</span>
+                </div>
+                <div class="experience-date" itemprop="startDate">📅 ${exp.date}</div>
                 <div class="experience-footer">
-                    <span class="experience-price">From ${exp.price}€</span>
-                    <button class="experience-btn" onclick="event.stopPropagation(); handleGetTickets(${exp.id})">→</button>
+                    <span class="experience-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="price" content="${exp.price}">Desde ${exp.price}€</span>
+                        <meta itemprop="priceCurrency" content="EUR">
+                    </span>
+                    <button class="experience-btn" onclick="event.stopPropagation(); handleGetTickets(${exp.id})" aria-label="Ver detalles de ${exp.title}">→</button>
                 </div>
             </div>
-        </div>
+        </article>
     `).join('');
 }
 
@@ -312,8 +322,20 @@ function setupEventListeners() {
 function handleGetTickets(experienceId) {
     const experience = experiencesData.find(exp => exp.id === experienceId);
     if (experience) {
-        alert(`Getting tickets for: ${experience.title}\nPrice: ${experience.price}€\nLocation: ${experience.location}`);
+        // Update page title for SEO when viewing experience details
+        document.title = `${experience.title} - San Valentín Madrid | Comprar Entradas`;
+        
         // In a real app, this would redirect to a booking page
+        // For now, we'll show an alert but could navigate to a detail page
+        alert(`Comprar entradas para: ${experience.title}\nPrecio: ${experience.price}€\nUbicación: ${experience.location}`);
+        
+        // Track event for analytics (if you add analytics later)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'select_content', {
+                'content_type': 'experience',
+                'item_id': experienceId
+            });
+        }
     }
 }
 
