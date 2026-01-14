@@ -48,9 +48,32 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .logo-image {
+        height: 32px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
 }
 
 .nav {
