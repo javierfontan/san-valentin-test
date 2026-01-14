@@ -1,3 +1,33 @@
+// Helper function para obtener URL de imagen
+function getImageUrl(experience) {
+    // Primero intenta imagen local
+    const localPath = `images/${experience.imageLocal || experience.category}/${experience.imageFile || ''}`;
+    
+    // Si hay imagen local, úsala
+    if (experience.imageFile) {
+        return localPath;
+    }
+    
+    // Si hay URL personalizada, úsala
+    if (experience.image) {
+        return experience.image;
+    }
+    
+    // Fallback: usar Unsplash con tema relacionado
+    const unsplashKeywords = {
+        'candlelight': 'candlelight concert romantic',
+        'valentines-specials': 'romantic valentine couple',
+        'concerts': 'jazz concert music',
+        'food': 'romantic dinner restaurant',
+        'workshops': 'chocolate workshop couple',
+        'wellness': 'spa romantic couple'
+    };
+    
+    const keyword = unsplashKeywords[experience.category] || 'romantic experience';
+    const imageId = experience.id || Math.floor(Math.random() * 1000);
+    return `https://source.unsplash.com/800x600/?${encodeURIComponent(keyword)}&sig=${imageId}`;
+}
+
 // Sample data based on the Fever landing page
 const experiencesData = [
     // Top Picks
@@ -10,7 +40,8 @@ const experiencesData = [
         category: "candlelight",
         topPick: true,
         rank: 1,
-        image: "https://fever.imgix.net/plan/photo/9c0a0c0e-8f5a-4e3d-9b2c-1a3b4c5d6e7f.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "senor-anillos.jpg", // Imagen local si existe
+        imageLocal: "candlelight"
     },
     {
         id: 2,
@@ -21,7 +52,8 @@ const experiencesData = [
         category: "valentines-specials",
         topPick: true,
         rank: 2,
-        image: "https://fever.imgix.net/plan/photo/code-173-fabrik.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "code-173.jpg",
+        imageLocal: "valentines"
     },
     {
         id: 3,
@@ -32,7 +64,8 @@ const experiencesData = [
         category: "concerts",
         topPick: true,
         rank: 3,
-        image: "https://fever.imgix.net/plan/photo/jazz-room-nueva-orleans.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "jazz-room.jpg",
+        imageLocal: "concerts"
     },
     // Candlelight Experiences
     {
@@ -42,7 +75,8 @@ const experiencesData = [
         date: "Jan 25 - Mar 29",
         price: 59,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-queen.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "queen.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 5,
@@ -51,7 +85,8 @@ const experiencesData = [
         date: "Jan 18 - Mar 15",
         price: 53,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-hans-zimmer.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "hans-zimmer.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 6,
@@ -60,7 +95,8 @@ const experiencesData = [
         date: "Jan 23 - May 15",
         price: 24,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-coldplay-imagine-dragons.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "coldplay-imagine-dragons.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 7,
@@ -69,7 +105,8 @@ const experiencesData = [
         date: "Mar 13 - May 15",
         price: 30,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-queen-abba.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "queen-abba.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 8,
@@ -78,7 +115,8 @@ const experiencesData = [
         date: "Feb 8 - Mar 29",
         price: 54,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-ed-sheeran-coldplay.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "ed-sheeran-coldplay.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 9,
@@ -87,7 +125,8 @@ const experiencesData = [
         date: "Jan 31 - Feb 28",
         price: 11,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-lago-cisnes.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "lago-cisnes.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 10,
@@ -96,7 +135,8 @@ const experiencesData = [
         date: "Jan 16 - May 9",
         price: 35,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-mozart-bach.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "mozart-bach.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 11,
@@ -105,7 +145,8 @@ const experiencesData = [
         date: "Jan 17 - Jun 19",
         price: 32,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-beatles.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "beatles.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 12,
@@ -114,7 +155,8 @@ const experiencesData = [
         date: "Feb 6 - May 10",
         price: 30,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-abba.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "abba.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 13,
@@ -123,7 +165,8 @@ const experiencesData = [
         date: "Feb 22 - Mar 8",
         price: 27,
         category: "candlelight",
-        image: "https://fever.imgix.net/plan/photo/candlelight-taylor-swift.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "taylor-swift.jpg",
+        imageLocal: "candlelight"
     },
     {
         id: 14,
@@ -132,7 +175,8 @@ const experiencesData = [
         date: "Feb 14",
         price: 27,
         category: "valentines-specials",
-        image: "https://fever.imgix.net/plan/photo/candlelight-san-valentin.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "san-valentin.jpg",
+        imageLocal: "valentines"
     },
     {
         id: 15,
@@ -141,7 +185,8 @@ const experiencesData = [
         date: "Feb 14",
         price: 67,
         category: "valentines-specials",
-        image: "https://fever.imgix.net/plan/photo/candlelight-romance-clasico.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "romance-clasico.jpg",
+        imageLocal: "valentines"
     },
     {
         id: 16,
@@ -150,7 +195,8 @@ const experiencesData = [
         date: "Feb 15",
         price: 25,
         category: "wellness",
-        image: "https://fever.imgix.net/plan/photo/candlelight-meditation.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "meditation.jpg",
+        imageLocal: "wellness"
     },
     {
         id: 17,
@@ -159,7 +205,8 @@ const experiencesData = [
         date: "Feb 13 - Feb 15",
         price: 85,
         category: "food",
-        image: "https://fever.imgix.net/plan/photo/cena-romantica-musica.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "cena-romantica.jpg",
+        imageLocal: "food"
     },
     {
         id: 18,
@@ -168,7 +215,8 @@ const experiencesData = [
         date: "Feb 10 - Feb 16",
         price: 45,
         category: "workshops",
-        image: "https://fever.imgix.net/plan/photo/taller-chocolate-parejas.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "chocolate-parejas.jpg",
+        imageLocal: "workshops"
     },
     {
         id: 19,
@@ -177,7 +225,8 @@ const experiencesData = [
         date: "Feb 1 - Feb 28",
         price: 120,
         category: "wellness",
-        image: "https://fever.imgix.net/plan/photo/spa-romantico-dos.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "spa-romantico.jpg",
+        imageLocal: "wellness"
     },
     {
         id: 20,
@@ -186,7 +235,8 @@ const experiencesData = [
         date: "Feb 12 - Feb 15",
         price: 28,
         category: "concerts",
-        image: "https://fever.imgix.net/plan/photo/jazz-romantico.jpg?auto=format&fit=crop&w=800&h=600"
+        imageFile: "jazz-romantico.jpg",
+        imageLocal: "concerts"
     }
 ];
 
@@ -220,14 +270,16 @@ function renderTopPicks() {
         .filter(exp => exp.topPick)
         .sort((a, b) => a.rank - b.rank);
 
-    topPicksContainer.innerHTML = topPicks.map(exp => `
+    topPicksContainer.innerHTML = topPicks.map(exp => {
+        const imageUrl = getImageUrl(exp);
+        return `
         <article class="top-pick-card" role="listitem" itemscope itemtype="https://schema.org/Event">
             <div class="top-pick-badge" aria-label="Top pick número ${exp.rank}">#${exp.rank}♥ TOP PICK</div>
             <div class="top-pick-image">
-                <img src="${exp.image || 'https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent(exp.title)}" 
+                <img src="${imageUrl}" 
                      alt="${exp.title} en ${exp.location}" 
                      loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent('${exp.title}')">
+                     onerror="this.src='https://source.unsplash.com/800x600/?romantic,couple&sig=${exp.id}'">
             </div>
             <div class="top-pick-content">
                 <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
@@ -241,7 +293,8 @@ function renderTopPicks() {
                 <button class="top-pick-btn" onclick="handleGetTickets(${exp.id})" aria-label="Comprar entradas para ${exp.title}">Comprar Entradas →</button>
             </div>
         </article>
-    `).join('');
+    `;
+    }).join('');
 }
 
 // Render Experiences
@@ -289,13 +342,15 @@ function renderExperiences() {
         return;
     }
     
-    gridContainer.innerHTML = filtered.map(exp => `
+    gridContainer.innerHTML = filtered.map(exp => {
+        const imageUrl = getImageUrl(exp);
+        return `
         <article class="experience-card" role="listitem" itemscope itemtype="https://schema.org/Event" onclick="handleGetTickets(${exp.id})">
             <div class="experience-image">
-                <img src="${exp.image || 'https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent(exp.title)}" 
+                <img src="${imageUrl}" 
                      alt="${exp.title} en ${exp.location}" 
                      loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent('${exp.title}')">
+                     onerror="this.src='https://source.unsplash.com/800x600/?romantic,experience&sig=${exp.id}'">
             </div>
             <div class="experience-content">
                 <h3 class="experience-title" itemprop="name">${exp.title}</h3>
@@ -312,7 +367,8 @@ function renderExperiences() {
                 </div>
             </div>
         </article>
-    `).join('');
+    `;
+    }).join('');
 }
 
 // Setup Event Listeners

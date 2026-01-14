@@ -32,3 +32,8 @@ build/
 # Variables de entorno
 .env
 .env.local
+
+# Imágenes (opcional - descomenta si no quieres subir imágenes a Git)
+# images/**/*.jpg
+# images/**/*.png
+# images/**/*.webp

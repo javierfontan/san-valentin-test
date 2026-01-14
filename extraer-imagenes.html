@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extractor de Imágenes - Fever</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e91e63;
+        }
+        .instructions {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .step-number {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #c2185b;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: none;
+        }
+        .image-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #e91e63;
+        }
+        .image-item img {
+            max-width: 200px;
+            max-height: 150px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: block;
+        }
+        .image-url {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        .copy-btn {
+            background: #28a745;
+            font-size: 14px;
+            padding: 5px 15px;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+        #codeOutput {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Extractor de Imágenes de Fever</h1>
+        
+        <div class="instructions">
+            <strong>⚠️ Importante:</strong> Este script necesita ejecutarse desde la página de Fever.
+            Abre la consola del navegador (F12) cuando estés en la página de Fever y ejecuta el código de abajo.
+        </div>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Abre la página de Fever:</strong>
+            <a href="https://fever-valentines-landing--workflows-and-automations-1.us-central1.hosted.app/en/madrid#valentines-specials" target="_blank">
+                https://fever-valentines-landing--workflows-and-automations-1.us-central1.hosted.app/en/madrid
+            </a>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Abre la consola del navegador:</strong> Presiona F12 o Ctrl+Shift+J
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Copia y pega este código en la consola:</strong>
+        </div>
+
+        <div id="codeOutput">
+// Script para extraer imágenes de Fever
+(() => {
+    console.log('🔍 Buscando imágenes...\n');
+    
+    const images = [];
+    const seen = new Set();
+    
+    // Buscar todas las imágenes
+    document.querySelectorAll('img').forEach(img => {
+        const src = img.src || img.getAttribute('data-src') || img.getAttribute('data-lazy-src') || img.getAttribute('data-original');
+        if (src && !src.includes('data:image') && !seen.has(src)) {
+            seen.add(src);
+            const alt = img.alt || '';
+            const title = img.getAttribute('title') || '';
+            
+            // Buscar título de la experiencia
+            let expTitle = '';
+            let card = img.closest('article, [class*="card"], [class*="experience"], [class*="item"]');
+            if (card) {
+                const titleEl = card.querySelector('h2, h3, h4, [class*="title"], [class*="name"], a');
+                if (titleEl) expTitle = titleEl.textContent.trim();
+            }
+            
+            images.push({
+                url: src,
+                alt: alt,
+                title: title || expTitle || 'Sin título',
+                element: img
+            });
+        }
+    });
+    
+    // Buscar imágenes en background-image
+    document.querySelectorAll('[style*="background-image"], [class*="image"]').forEach(el => {
+        const style = window.getComputedStyle(el);
+        const bgImage = style.backgroundImage;
+        if (bgImage && bgImage !== 'none' && bgImage.includes('url(')) {
+            const url = bgImage.match(/url\(['"]?([^'"]+)['"]?\)/)?.[1];
+            if (url && !url.includes('data:') && !seen.has(url)) {
+                seen.add(url);
+                let title = '';
+                const titleEl = el.closest('[class*="card"]')?.querySelector('h2, h3, [class*="title"]');
+                if (titleEl) title = titleEl.textContent.trim();
+                
+                images.push({
+                    url: url,
+                    alt: '',
+                    title: title || 'Background image',
+                    element: el
+                });
+            }
+        }
+    });
+    
+    console.log(`✅ Encontradas ${images.length} imágenes:\n`);
+    console.log('='.repeat(80));
+    
+    images.forEach((img, i) => {
+        console.log(`\n${i + 1}. ${img.title || 'Sin título'}`);
+        console.log(`   URL: ${img.url}`);
+        if (img.alt) console.log(`   Alt: ${img.alt}`);
+    });
+    
+    // Crear objeto para copiar
+    const imageMap = {};
+    images.forEach(img => {
+        const key = img.title.toLowerCase().replace(/[^a-z0-9]/g, '_').substring(0, 30);
+        if (key && !imageMap[key]) {
+            imageMap[key] = img.url;
+        }
+    });
+    
+    console.log('\n' + '='.repeat(80));
+    console.log('\n📋 Objeto JavaScript listo para usar:\n');
+    console.log(JSON.stringify(imageMap, null, 2));
+    
+    // Copiar al portapapeles
+    const text = images.map(img => `${img.title}\n${img.url}`).join('\n\n');
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            console.log('\n✅ URLs copiadas al portapapeles!');
+        });
+    }
+    
+    return images;
+})();
+        </div>
+
+        <button onclick="document.getElementById('codeOutput').style.display = 'block'; this.style.display = 'none'">
+            Mostrar Código
+        </button>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Presiona Enter</strong> y verás todas las URLs en la consola
+        </div>
+
+        <div class="step">
+            <span class="step-number">5</span>
+            <strong>Copia las URLs</strong> que necesites y pégalas en <code>script.js</code>
+        </div>
+
+        <h2>💡 Tips</h2>
+        <ul>
+            <li>Las URLs se copian automáticamente al portapapeles</li>
+            <li>Busca imágenes que contengan palabras como "candlelight", "queen", "beatles", etc.</li>
+            <li>Si una imagen no carga, el código mostrará un placeholder automáticamente</li>
+            <li>Las URLs de imgix se optimizan automáticamente con parámetros de tamaño</li>
+        </ul>
+    </div>
+
+    <script>
+        // Mostrar código al cargar
+        window.addEventListener('load', () => {
+            const codeEl = document.getElementById('codeOutput');
+            const code = codeEl.textContent;
+            codeEl.innerHTML = '<pre>' + code.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</pre>';
+        });
+    </script>
+</body>
+</html>
