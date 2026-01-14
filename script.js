@@ -1,32 +1,56 @@
-// Helper function para obtener URL de imagen desde Unsplash
+// Helper function para obtener URL de imagen desde servicios gratuitos
 function getImageUrl(experience) {
-    // URLs directas de Unsplash usando IDs específicos de fotos
-    // Cada experiencia tiene una foto única y consistente
+    // URLs directas de Unsplash y Pexels - imágenes reales y específicas
     const imageUrls = {
-        1: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop', // Candlelight concert
-        2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop', // Romantic dinner
-        3: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop', // Jazz club
-        4: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop', // Rock concert
-        5: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop', // Orchestra
-        6: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop', // Concert
-        7: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop', // Disco
-        8: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop', // Acoustic
-        9: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=600&fit=crop', // Ballet
-        10: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop', // Classical
-        11: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop', // Beatles
-        12: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop', // Disco 70s
-        13: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop', // Pop concert
-        14: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop', // Valentine
-        15: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop', // Romantic classical
-        16: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop', // Meditation
-        17: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop', // Romantic dinner
-        18: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop', // Chocolate
-        19: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop', // Spa
-        20: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop' // Jazz romantic
+        // Top Picks
+        1: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Candlelight: El Señor de los Anillos - Candlelight concert
+        2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80', // CODE 173 - Romantic dinner
+        3: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop&q=80', // Jazz Room - Jazz club
+        
+        // Candlelight Experiences
+        4: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Queen - Rock concert
+        5: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Hans Zimmer - Orchestra cinematic
+        6: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Coldplay vs Imagine Dragons - Concert
+        7: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80', // Queen vs ABBA - Disco party
+        8: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Ed Sheeran vs Coldplay - Acoustic
+        9: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=600&fit=crop&q=80', // Lago de los Cisnes - Ballet
+        10: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Mozart, Bach - Classical
+        11: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // The Beatles - Concert
+        12: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80', // ABBA - Disco 70s
+        13: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Taylor Swift - Pop concert
+        
+        // Valentines Specials
+        14: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop&q=80', // San Valentín - Romantic candles
+        15: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Romance Clásico - Classical romantic
+        
+        // Wellness
+        16: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop&q=80', // Meditation - Wellness piano
+        19: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80', // Spa - Couple spa
+        
+        // Food
+        17: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80', // Cena Romántica - Romantic dinner
+        
+        // Workshops
+        18: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop&q=80', // Chocolate - Chocolate workshop
+        
+        // Concerts
+        20: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop&q=80' // Jazz Romántico - Jazz romantic
     };
     
-    // Retornar URL específica o una por defecto
-    return imageUrls[experience.id] || 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop';
+    // Si no hay URL específica, usar una genérica según categoría
+    if (!imageUrls[experience.id]) {
+        const categoryImages = {
+            'candlelight': 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80',
+            'valentines-specials': 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop&q=80',
+            'concerts': 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop&q=80',
+            'food': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80',
+            'workshops': 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop&q=80',
+            'wellness': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80'
+        };
+        return categoryImages[experience.category] || 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80';
+    }
+    
+    return imageUrls[experience.id];
 }
 
 // Sample data based on the Fever landing page
@@ -241,7 +265,7 @@ function renderTopPicks() {
                      alt="${exp.title} en ${exp.location}" 
                      loading="lazy"
                      crossorigin="anonymous"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80'">
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80&auto=format'">
             </div>
             <div class="top-pick-content">
                 <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
@@ -313,7 +337,7 @@ function renderExperiences() {
                      alt="${exp.title} en ${exp.location}" 
                      loading="lazy"
                      crossorigin="anonymous"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80'">
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80&auto=format'">
             </div>
             <div class="experience-content">
                 <h3 class="experience-title" itemprop="name">${exp.title}</h3>
