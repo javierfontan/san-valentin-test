@@ -64,7 +64,8 @@ const experiencesData = [
         price: 36,
         category: "candlelight",
         topPick: true,
-        rank: 1
+        rank: 1,
+        url: "https://feverup.com/madrid/e/candlelight-el-senor-de-los-anillos"
     },
     {
         id: 2,
@@ -74,7 +75,8 @@ const experiencesData = [
         price: 33,
         category: "valentines-specials",
         topPick: true,
-        rank: 2
+        rank: 2,
+        url: "https://feverup.com/madrid/e/code-173-fabrik"
     },
     {
         id: 3,
@@ -84,7 +86,8 @@ const experiencesData = [
         price: 38,
         category: "concerts",
         topPick: true,
-        rank: 3
+        rank: 3,
+        url: "https://feverup.com/madrid/e/jazz-room-nueva-orleans"
     },
     // Candlelight Experiences
     {
@@ -93,7 +96,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Jan 25 - Mar 29",
         price: 59,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-tributo-queen"
     },
     {
         id: 5,
@@ -101,7 +105,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Jan 18 - Mar 15",
         price: 53,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-hans-zimmer"
     },
     {
         id: 6,
@@ -109,7 +114,8 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Jan 23 - May 15",
         price: 24,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-coldplay-imagine-dragons"
     },
     {
         id: 7,
@@ -117,7 +123,8 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Mar 13 - May 15",
         price: 30,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-queen-abba"
     },
     {
         id: 8,
@@ -125,7 +132,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Feb 8 - Mar 29",
         price: 54,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-ed-sheeran-coldplay"
     },
     {
         id: 9,
@@ -133,7 +141,8 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Jan 31 - Feb 28",
         price: 11,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-lago-cisnes"
     },
     {
         id: 10,
@@ -141,7 +150,8 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Jan 16 - May 9",
         price: 35,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-mozart-bach"
     },
     {
         id: 11,
@@ -149,7 +159,8 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Jan 17 - Jun 19",
         price: 32,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-beatles"
     },
     {
         id: 12,
@@ -157,7 +168,8 @@ const experiencesData = [
         location: "Ateneo de Madrid",
         date: "Feb 6 - May 10",
         price: 30,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-abba"
     },
     {
         id: 13,
@@ -165,7 +177,8 @@ const experiencesData = [
         location: "Ateneo de Madrid",
         date: "Feb 22 - Mar 8",
         price: 27,
-        category: "candlelight"
+        category: "candlelight",
+        url: "https://feverup.com/madrid/e/candlelight-taylor-swift"
     },
     {
         id: 14,
@@ -173,7 +186,8 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Feb 14",
         price: 27,
-        category: "valentines-specials"
+        category: "valentines-specials",
+        url: "https://feverup.com/madrid/e/candlelight-san-valentin"
     },
     {
         id: 15,
@@ -181,7 +195,8 @@ const experiencesData = [
         location: "Palacio de los Duques de Santoña",
         date: "Feb 14",
         price: 67,
-        category: "valentines-specials"
+        category: "valentines-specials",
+        url: "https://feverup.com/madrid/e/candlelight-romance-clasico"
     },
     {
         id: 16,
@@ -189,7 +204,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Feb 15",
         price: 25,
-        category: "wellness"
+        category: "wellness",
+        url: "https://feverup.com/madrid/e/candlelight-meditation"
     },
     {
         id: 17,
@@ -197,7 +213,8 @@ const experiencesData = [
         location: "Restaurante El Jardín",
         date: "Feb 13 - Feb 15",
         price: 85,
-        category: "food"
+        category: "food",
+        url: "https://feverup.com/madrid/e/cena-romantica-musica"
     },
     {
         id: 18,
@@ -205,7 +222,8 @@ const experiencesData = [
         location: "Chocolatería San Ginés",
         date: "Feb 10 - Feb 16",
         price: 45,
-        category: "workshops"
+        category: "workshops",
+        url: "https://feverup.com/madrid/e/taller-chocolate-parejas"
     },
     {
         id: 19,
@@ -213,7 +231,8 @@ const experiencesData = [
         location: "Spa Gran Meliá",
         date: "Feb 1 - Feb 28",
         price: 120,
-        category: "wellness"
+        category: "wellness",
+        url: "https://feverup.com/madrid/e/spa-romantico-dos"
     },
     {
         id: 20,
@@ -221,7 +240,8 @@ const experiencesData = [
         location: "Café Central",
         date: "Feb 12 - Feb 15",
         price: 28,
-        category: "concerts"
+        category: "concerts",
+        url: "https://feverup.com/madrid/e/jazz-romantico"
     }
 ];
 
@@ -259,25 +279,27 @@ function renderTopPicks() {
         const imageUrl = getImageUrl(exp);
         return `
         <article class="top-pick-card" role="listitem" itemscope itemtype="https://schema.org/Event">
-            <div class="top-pick-badge" aria-label="Top pick número ${exp.rank}">#${exp.rank}♥ TOP PICK</div>
-            <div class="top-pick-image">
-                <img src="${imageUrl}" 
-                     alt="${exp.title} en ${exp.location}" 
-                     loading="lazy"
-                     crossorigin="anonymous"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80&auto=format'">
-            </div>
-            <div class="top-pick-content">
-                <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
-                <div class="top-pick-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
-                    <span itemprop="name">📍 ${exp.location}</span>
+            <a href="${exp.url || 'https://feverup.com/madrid'}" target="_blank" rel="noopener noreferrer" class="top-pick-link">
+                <div class="top-pick-badge" aria-label="Top pick número ${exp.rank}">#${exp.rank}♥ TOP PICK</div>
+                <div class="top-pick-image">
+                    <img src="${imageUrl}" 
+                         alt="${exp.title} en ${exp.location}" 
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80&auto=format'">
                 </div>
-                <div class="top-pick-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                    <span itemprop="price" content="${exp.price}">Desde ${exp.price}€</span>
-                    <meta itemprop="priceCurrency" content="EUR">
+                <div class="top-pick-content">
+                    <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
+                    <div class="top-pick-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                        <span itemprop="name">📍 ${exp.location}</span>
+                    </div>
+                    <div class="top-pick-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span itemprop="price" content="${exp.price}">Desde ${exp.price}€</span>
+                        <meta itemprop="priceCurrency" content="EUR">
+                    </div>
+                    <span class="top-pick-btn" aria-label="Comprar entradas para ${exp.title}">Comprar Entradas →</span>
                 </div>
-                <button class="top-pick-btn" onclick="handleGetTickets(${exp.id})" aria-label="Comprar entradas para ${exp.title}">Comprar Entradas →</button>
-            </div>
+            </a>
         </article>
     `;
     }).join('');
@@ -331,28 +353,30 @@ function renderExperiences() {
     gridContainer.innerHTML = filtered.map(exp => {
         const imageUrl = getImageUrl(exp);
         return `
-        <article class="experience-card" role="listitem" itemscope itemtype="https://schema.org/Event" onclick="handleGetTickets(${exp.id})">
-            <div class="experience-image">
-                <img src="${imageUrl}" 
-                     alt="${exp.title} en ${exp.location}" 
-                     loading="lazy"
-                     crossorigin="anonymous"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80&auto=format'">
-            </div>
-            <div class="experience-content">
-                <h3 class="experience-title" itemprop="name">${exp.title}</h3>
-                <div class="experience-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
-                    <span itemprop="name">📍 ${exp.location}</span>
+        <article class="experience-card" role="listitem" itemscope itemtype="https://schema.org/Event">
+            <a href="${exp.url || 'https://feverup.com/madrid'}" target="_blank" rel="noopener noreferrer" class="experience-link">
+                <div class="experience-image">
+                    <img src="${imageUrl}" 
+                         alt="${exp.title} en ${exp.location}" 
+                         loading="lazy"
+                         crossorigin="anonymous"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80&auto=format'">
                 </div>
-                <div class="experience-date" itemprop="startDate">📅 ${exp.date}</div>
-                <div class="experience-footer">
-                    <span class="experience-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                        <span itemprop="price" content="${exp.price}">Desde ${exp.price}€</span>
-                        <meta itemprop="priceCurrency" content="EUR">
-                    </span>
-                    <button class="experience-btn" onclick="event.stopPropagation(); handleGetTickets(${exp.id})" aria-label="Ver detalles de ${exp.title}">→</button>
+                <div class="experience-content">
+                    <h3 class="experience-title" itemprop="name">${exp.title}</h3>
+                    <div class="experience-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                        <span itemprop="name">📍 ${exp.location}</span>
+                    </div>
+                    <div class="experience-date" itemprop="startDate">📅 ${exp.date}</div>
+                    <div class="experience-footer">
+                        <span class="experience-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span itemprop="price" content="${exp.price}">Desde ${exp.price}€</span>
+                            <meta itemprop="priceCurrency" content="EUR">
+                        </span>
+                        <span class="experience-btn" aria-label="Ver detalles de ${exp.title}">→</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         </article>
     `;
     }).join('');
@@ -391,16 +415,11 @@ function setupEventListeners() {
     });
 }
 
-// Handle Get Tickets
+// Handle Get Tickets - Redirect to Fever URL
 function handleGetTickets(experienceId) {
     const experience = experiencesData.find(exp => exp.id === experienceId);
-    if (experience) {
-        // Update page title for SEO when viewing experience details
-        document.title = `${experience.title} - San Valentín Madrid | Comprar Entradas`;
-        
-        // In a real app, this would redirect to a booking page
-        // For now, we'll show an alert but could navigate to a detail page
-        alert(`Comprar entradas para: ${experience.title}\nPrecio: ${experience.price}€\nUbicación: ${experience.location}`);
+    if (experience && experience.url) {
+        window.open(experience.url, '_blank', 'noopener,noreferrer');
         
         // Track event for analytics (if you add analytics later)
         if (typeof gtag !== 'undefined') {
@@ -409,6 +428,9 @@ function handleGetTickets(experienceId) {
                 'item_id': experienceId
             });
         }
+    } else {
+        // Fallback to Fever Madrid page
+        window.open('https://feverup.com/madrid', '_blank', 'noopener,noreferrer');
     }
 }
 

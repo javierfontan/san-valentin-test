@@ -397,6 +397,13 @@ body {
     position: relative;
 }
 
+.top-pick-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
 .top-pick-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
@@ -470,6 +477,9 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .top-pick-btn:hover {
@@ -558,6 +568,13 @@ body {
     cursor: pointer;
 }
 
+.experience-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
 .experience-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
@@ -630,6 +647,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
+    display: inline-block;
 }
 
 .experience-btn:hover {
