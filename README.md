@@ -1,6 +1,6 @@
-# Mi Proyecto
+# San Valentín Test
 
-Bienvenido a mi proyecto.
+Bienvenido al proyecto San Valentín Test.
 
 ## Descripción
 
