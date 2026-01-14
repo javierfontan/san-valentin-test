@@ -157,7 +157,7 @@ body {
 
 /* History Section */
 .history-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     background: linear-gradient(135deg, #fff5f8 0%, #ffeef2 100%);
     position: relative;
     overflow: hidden;
@@ -177,7 +177,7 @@ body {
 .history-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -188,18 +188,18 @@ body {
 }
 
 .history-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .history-intro {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--text-dark);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 500;
 }
 
@@ -209,14 +209,14 @@ body {
 }
 
 .history-timeline {
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
 }
 
 .history-item {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid rgba(233, 30, 99, 0.1);
     position: relative;
 }
@@ -238,60 +238,34 @@ body {
 }
 
 .history-year {
-    min-width: 120px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    background: rgba(233, 30, 99, 0.1);
-    border-radius: 8px;
+    min-width: 60px;
+    font-size: 2rem;
     text-align: center;
     height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .history-description h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .history-description p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-light);
-}
-
-.history-quote {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 2.5rem 0;
-    border-left: 4px solid var(--primary-color);
-    box-shadow: var(--shadow);
-}
-
-.quote-text {
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
     line-height: 1.6;
-}
-
-.quote-author {
-    font-size: 1rem;
     color: var(--text-light);
-    text-align: right;
-    font-weight: 500;
 }
 
 .history-conclusion {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--text-dark);
-    margin-top: 2rem;
-    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
 }
@@ -304,8 +278,8 @@ body {
 
 .history-image-placeholder {
     width: 100%;
-    max-width: 400px;
-    height: 500px;
+    max-width: 350px;
+    height: 350px;
     background: linear-gradient(135deg, #ff6b9d 0%, #e91e63 100%);
     border-radius: 20px;
     display: flex;
@@ -334,7 +308,7 @@ body {
 }
 
 .history-icon {
-    font-size: 8rem;
+    font-size: 6rem;
     z-index: 1;
     position: relative;
     animation: pulse 2s ease-in-out infinite;
@@ -358,15 +332,19 @@ body {
     
     .history-image-placeholder {
         max-width: 100%;
-        height: 300px;
+        height: 250px;
     }
     
     .history-icon {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     
     .history-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    
+    .history-section {
+        padding: 2rem 0;
     }
     
     .history-item {
