@@ -1,56 +1,60 @@
-// Helper function para obtener URL de imagen desde servicios gratuitos
+// Helper function para obtener URL de imagen real de Fever
 function getImageUrl(experience) {
-    // URLs directas de Unsplash y Pexels - imágenes reales y específicas
-    const imageUrls = {
+    // Mapeo de Plan ID a URL de imagen real de Fever
+    // Las URLs se optimizan automáticamente cambiando w_550,h_550 por w_800,h_600
+    const planIdToImage = {
         // Top Picks
-        1: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Candlelight: El Señor de los Anillos - Candlelight concert
-        2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80', // CODE 173 - Romantic dinner
-        3: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop&q=80', // Jazz Room - Jazz club
+        '524089': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/6e89eade-c92d-11f0-ab44-1e339e1eaa9a.jpg', // El Señor de los Anillos
+        '502224': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/ca6d5314-db1f-11f0-aed6-0ee7c3aa6ae4.jpeg', // CODE 173
+        '250209': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/d41e2e90-570f-11f0-b2c5-f295a86a2f76.jpg', // Jazz Room
         
         // Candlelight Experiences
-        4: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Queen - Rock concert
-        5: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Hans Zimmer - Orchestra cinematic
-        6: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Coldplay vs Imagine Dragons - Concert
-        7: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80', // Queen vs ABBA - Disco party
-        8: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Ed Sheeran vs Coldplay - Acoustic
-        9: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=600&fit=crop&q=80', // Lago de los Cisnes - Ballet
-        10: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Mozart, Bach - Classical
-        11: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // The Beatles - Concert
-        12: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop&q=80', // ABBA - Disco 70s
-        13: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop&q=80', // Taylor Swift - Pop concert
+        '198569': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/5009ee58-1940-11f0-bd95-56c21721c770.jpg', // Queen
+        '118384': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/6347514e-1397-11f0-bb78-565b7aecbc77.jpg', // Hans Zimmer
+        '160548': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/7588d684-1158-11f0-b4c2-c22f5b3d6cc1.jpg', // Coldplay vs Imagine Dragons
+        '183038': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/ad60b410-1945-11f0-bf40-961efeb2b763.jpg', // Queen vs ABBA
+        '491996': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/dc7d1b48-148c-11f0-b520-be12cc90078e.jpg', // Ed Sheeran vs Coldplay
+        '136532': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/073db61e-2020-11f0-a226-461578d92733.jpg', // Lago de los Cisnes
+        '344700': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/581f9228-057c-11f0-a694-227d8868e509.jpg', // Mozart, Bach
+        '261562': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/b2ee49a2-1a93-11f0-aa80-c25aaa6cf640.jpg', // The Beatles
+        '139030': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/f51b8418-25ae-11f0-a83d-9e59e0727bbd.jpg', // ABBA
+        '107114': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/ee89a0dc-1aa8-11f0-87b3-ba3a3d0c034e.jpg', // Taylor Swift
         
         // Valentines Specials
-        14: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop&q=80', // San Valentín - Romantic candles
-        15: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80', // Romance Clásico - Classical romantic
+        '519886': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/581f9228-057c-11f0-a694-227d8868e509.jpg', // Especial San Valentín
+        '411236': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/a1694468-0af6-11f0-bdcd-ee32a89aa521.jpg', // Romance Clásico
         
         // Wellness
-        16: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop&q=80', // Meditation - Wellness piano
-        19: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80', // Spa - Couple spa
+        '481507': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/b17c86ea-a447-11f0-9c74-e2e305484c14.jpg', // Meditation
+        '93624': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/b271f8ac-2e3e-11eb-9bdd-06551cb39bc6.jpg', // Spa
         
         // Food
-        17: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80', // Cena Romántica - Romantic dinner
+        '533582': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/27f0dfba-df4e-11f0-8469-92f95fc64d0f.png', // Cena Romántica
         
         // Workshops
-        18: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop&q=80', // Chocolate - Chocolate workshop
-        
-        // Concerts
-        20: 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop&q=80' // Jazz Romántico - Jazz romantic
+        '475629': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/84071038-df1f-11ef-a5e9-9e203939653e' // Taller Chocolate
     };
     
-    // Si no hay URL específica, usar una genérica según categoría
-    if (!imageUrls[experience.id]) {
-        const categoryImages = {
-            'candlelight': 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop&q=80',
-            'valentines-specials': 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop&q=80',
-            'concerts': 'https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&h=600&fit=crop&q=80',
-            'food': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80',
-            'workshops': 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&h=600&fit=crop&q=80',
-            'wellness': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop&q=80'
-        };
-        return categoryImages[experience.category] || 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop&q=80';
+    // Extraer Plan ID de la URL de la experiencia
+    const planIdMatch = experience.url?.match(/\/m\/(\d+)/);
+    const planId = planIdMatch ? planIdMatch[1] : null;
+    
+    // Si tenemos Plan ID y existe en el mapeo, usar esa imagen
+    if (planId && planIdToImage[planId]) {
+        return planIdToImage[planId];
     }
     
-    return imageUrls[experience.id];
+    // Fallback: usar imagen genérica según categoría
+    const categoryImages = {
+        'candlelight': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/581f9228-057c-11f0-a694-227d8868e509.jpg',
+        'valentines-specials': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/a1694468-0af6-11f0-bdcd-ee32a89aa521.jpg',
+        'concerts': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/d41e2e90-570f-11f0-b2c5-f295a86a2f76.jpg',
+        'food': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/27f0dfba-df4e-11f0-8469-92f95fc64d0f.png',
+        'workshops': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/84071038-df1f-11ef-a5e9-9e203939653e',
+        'wellness': 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/b271f8ac-2e3e-11eb-9bdd-06551cb39bc6.jpg'
+    };
+    
+    return categoryImages[experience.category] || 'https://applications-media.feverup.com/image/upload/f_auto,w_800,h_600/fever2/plan/photo/581f9228-057c-11f0-a694-227d8868e509.jpg';
 }
 
 // Sample data based on the Fever landing page
