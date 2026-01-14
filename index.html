@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín en Madrid | Experiencias Románticas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Fever</div>
+                <nav class="nav">
+                    <select class="city-select">
+                        <option value="madrid" selected>Madrid</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="valencia">Valencia</option>
+                    </select>
+                    <button class="btn-gift">GIFT NOW</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="xoxo">XOXO</span>
+                    <span class="main-title">Valentine's Day<br>in Madrid</span>
+                </h1>
+                <p class="hero-subtitle">Discover the most romantic experiences to gift or enjoy together</p>
+                <button class="btn-primary">GIFT NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Picks Section -->
+    <section class="top-picks">
+        <div class="container">
+            <h2 class="section-title">♥ Top 3 Romantic Picks ♥</h2>
+            <p class="section-subtitle">Most loved experiences for Valentine's Day</p>
+            <div class="top-picks-grid" id="topPicks">
+                <!-- Top picks will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">All Experiences</button>
+                        <button class="filter-btn" data-category="candlelight">🕯️ Candlelight</button>
+                        <button class="filter-btn" data-category="valentines-specials">Valentines Specials</button>
+                        <button class="filter-btn" data-category="concerts">Concerts, musicals and theater</button>
+                        <button class="filter-btn" data-category="food">Food</button>
+                        <button class="filter-btn" data-category="workshops">Workshops and activities</button>
+                        <button class="filter-btn" data-category="wellness">Wellness and relaxation</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Price</h3>
+                    <select class="price-filter" id="priceFilter">
+                        <option value="all">All</option>
+                        <option value="under-25">Under 25€</option>
+                        <option value="25-50">25€ - 50€</option>
+                        <option value="50-100">50€ - 100€</option>
+                        <option value="100+">100€+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <h3>Date</h3>
+                    <input type="date" class="date-filter" id="dateFilter">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Grid -->
+    <section class="experiences" id="experiencesSection">
+        <div class="container">
+            <h2 class="section-title" id="categoryTitle">🕯️ Candlelight Experiences</h2>
+            <div class="experiences-grid" id="experiencesGrid">
+                <!-- Experiences will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Discover the best experiences in your city. From concerts to immersive events, find the perfect Valentine's Day gift for someone special.</p>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+            <p class="footer-copyright">© 2026 Fever. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
