@@ -1,31 +1,32 @@
-// Helper function para obtener URL de imagen
+// Helper function para obtener URL de imagen desde Unsplash
 function getImageUrl(experience) {
-    // Primero intenta imagen local
-    const localPath = `images/${experience.imageLocal || experience.category}/${experience.imageFile || ''}`;
-    
-    // Si hay imagen local, úsala
-    if (experience.imageFile) {
-        return localPath;
-    }
-    
-    // Si hay URL personalizada, úsala
-    if (experience.image) {
-        return experience.image;
-    }
-    
-    // Fallback: usar Unsplash con tema relacionado
-    const unsplashKeywords = {
-        'candlelight': 'candlelight concert romantic',
-        'valentines-specials': 'romantic valentine couple',
-        'concerts': 'jazz concert music',
-        'food': 'romantic dinner restaurant',
-        'workshops': 'chocolate workshop couple',
-        'wellness': 'spa romantic couple'
+    // Mapeo de imágenes específicas por experiencia
+    const imageMap = {
+        1: 'candlelight-concert-romantic', // El Señor de los Anillos
+        2: 'romantic-dinner-couple', // CODE 173
+        3: 'jazz-concert-music', // Jazz Room
+        4: 'rock-concert-queen', // Queen
+        5: 'cinematic-music-orchestra', // Hans Zimmer
+        6: 'concert-coldplay-music', // Coldplay vs Imagine Dragons
+        7: 'disco-music-party', // Queen vs ABBA
+        8: 'acoustic-concert-music', // Ed Sheeran vs Coldplay
+        9: 'ballet-swan-lake', // Lago de los Cisnes
+        10: 'classical-music-concert', // Mozart, Bach
+        11: 'beatles-concert-music', // The Beatles
+        12: 'disco-70s-music', // ABBA
+        13: 'pop-concert-music', // Taylor Swift
+        14: 'romantic-candlelight-valentine', // San Valentín
+        15: 'romantic-classical-concert', // Romance Clásico
+        16: 'meditation-wellness-piano', // Meditation
+        17: 'romantic-dinner-restaurant', // Cena Romántica
+        18: 'chocolate-workshop-couple', // Taller Chocolate
+        19: 'spa-wellness-couple', // Spa
+        20: 'jazz-club-music' // Jazz Romántico
     };
     
-    const keyword = unsplashKeywords[experience.category] || 'romantic experience';
-    const imageId = experience.id || Math.floor(Math.random() * 1000);
-    return `https://source.unsplash.com/800x600/?${encodeURIComponent(keyword)}&sig=${imageId}`;
+    const keyword = imageMap[experience.id] || 'romantic-experience';
+    // Usar ID fijo para que cada experiencia tenga siempre la misma imagen
+    return `https://source.unsplash.com/800x600/?${keyword}&sig=${experience.id}`;
 }
 
 // Sample data based on the Fever landing page
@@ -39,9 +40,7 @@ const experiencesData = [
         price: 36,
         category: "candlelight",
         topPick: true,
-        rank: 1,
-        imageFile: "senor-anillos.jpg", // Imagen local si existe
-        imageLocal: "candlelight"
+        rank: 1
     },
     {
         id: 2,
@@ -51,9 +50,7 @@ const experiencesData = [
         price: 33,
         category: "valentines-specials",
         topPick: true,
-        rank: 2,
-        imageFile: "code-173.jpg",
-        imageLocal: "valentines"
+        rank: 2
     },
     {
         id: 3,
@@ -63,9 +60,7 @@ const experiencesData = [
         price: 38,
         category: "concerts",
         topPick: true,
-        rank: 3,
-        imageFile: "jazz-room.jpg",
-        imageLocal: "concerts"
+        rank: 3
     },
     // Candlelight Experiences
     {
@@ -74,9 +69,7 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Jan 25 - Mar 29",
         price: 59,
-        category: "candlelight",
-        imageFile: "queen.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 5,
@@ -84,9 +77,7 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Jan 18 - Mar 15",
         price: 53,
-        category: "candlelight",
-        imageFile: "hans-zimmer.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 6,
@@ -94,9 +85,7 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Jan 23 - May 15",
         price: 24,
-        category: "candlelight",
-        imageFile: "coldplay-imagine-dragons.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 7,
@@ -104,9 +93,7 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Mar 13 - May 15",
         price: 30,
-        category: "candlelight",
-        imageFile: "queen-abba.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 8,
@@ -114,9 +101,7 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Feb 8 - Mar 29",
         price: 54,
-        category: "candlelight",
-        imageFile: "ed-sheeran-coldplay.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 9,
@@ -124,9 +109,7 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Jan 31 - Feb 28",
         price: 11,
-        category: "candlelight",
-        imageFile: "lago-cisnes.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 10,
@@ -134,9 +117,7 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Jan 16 - May 9",
         price: 35,
-        category: "candlelight",
-        imageFile: "mozart-bach.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 11,
@@ -144,9 +125,7 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Jan 17 - Jun 19",
         price: 32,
-        category: "candlelight",
-        imageFile: "beatles.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 12,
@@ -154,9 +133,7 @@ const experiencesData = [
         location: "Ateneo de Madrid",
         date: "Feb 6 - May 10",
         price: 30,
-        category: "candlelight",
-        imageFile: "abba.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 13,
@@ -164,9 +141,7 @@ const experiencesData = [
         location: "Ateneo de Madrid",
         date: "Feb 22 - Mar 8",
         price: 27,
-        category: "candlelight",
-        imageFile: "taylor-swift.jpg",
-        imageLocal: "candlelight"
+        category: "candlelight"
     },
     {
         id: 14,
@@ -174,9 +149,7 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Feb 14",
         price: 27,
-        category: "valentines-specials",
-        imageFile: "san-valentin.jpg",
-        imageLocal: "valentines"
+        category: "valentines-specials"
     },
     {
         id: 15,
@@ -184,9 +157,7 @@ const experiencesData = [
         location: "Palacio de los Duques de Santoña",
         date: "Feb 14",
         price: 67,
-        category: "valentines-specials",
-        imageFile: "romance-clasico.jpg",
-        imageLocal: "valentines"
+        category: "valentines-specials"
     },
     {
         id: 16,
@@ -194,9 +165,7 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Feb 15",
         price: 25,
-        category: "wellness",
-        imageFile: "meditation.jpg",
-        imageLocal: "wellness"
+        category: "wellness"
     },
     {
         id: 17,
@@ -204,9 +173,7 @@ const experiencesData = [
         location: "Restaurante El Jardín",
         date: "Feb 13 - Feb 15",
         price: 85,
-        category: "food",
-        imageFile: "cena-romantica.jpg",
-        imageLocal: "food"
+        category: "food"
     },
     {
         id: 18,
@@ -214,9 +181,7 @@ const experiencesData = [
         location: "Chocolatería San Ginés",
         date: "Feb 10 - Feb 16",
         price: 45,
-        category: "workshops",
-        imageFile: "chocolate-parejas.jpg",
-        imageLocal: "workshops"
+        category: "workshops"
     },
     {
         id: 19,
@@ -224,9 +189,7 @@ const experiencesData = [
         location: "Spa Gran Meliá",
         date: "Feb 1 - Feb 28",
         price: 120,
-        category: "wellness",
-        imageFile: "spa-romantico.jpg",
-        imageLocal: "wellness"
+        category: "wellness"
     },
     {
         id: 20,
@@ -234,9 +197,7 @@ const experiencesData = [
         location: "Café Central",
         date: "Feb 12 - Feb 15",
         price: 28,
-        category: "concerts",
-        imageFile: "jazz-romantico.jpg",
-        imageLocal: "concerts"
+        category: "concerts"
     }
 ];
 
@@ -279,7 +240,7 @@ function renderTopPicks() {
                 <img src="${imageUrl}" 
                      alt="${exp.title} en ${exp.location}" 
                      loading="lazy"
-                     onerror="this.src='https://source.unsplash.com/800x600/?romantic,couple&sig=${exp.id}'">
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop'">
             </div>
             <div class="top-pick-content">
                 <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
@@ -350,7 +311,7 @@ function renderExperiences() {
                 <img src="${imageUrl}" 
                      alt="${exp.title} en ${exp.location}" 
                      loading="lazy"
-                     onerror="this.src='https://source.unsplash.com/800x600/?romantic,experience&sig=${exp.id}'">
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop'">
             </div>
             <div class="experience-content">
                 <h3 class="experience-title" itemprop="name">${exp.title}</h3>
