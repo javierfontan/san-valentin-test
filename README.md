@@ -13,6 +13,10 @@ Landing page moderna inspirada en Fever para experiencias de San Valentín en Ma
 
 ## 🚀 Cómo usar
 
+### Ver en línea (GitHub Pages)
+**🌐 https://javierfontan.github.io/san-valentin-test/**
+
+### Ver localmente
 1. Abre `index.html` en tu navegador
 2. O si tienes un servidor local:
    ```bash
