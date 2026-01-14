@@ -9,7 +9,8 @@ const experiencesData = [
         price: 36,
         category: "candlelight",
         topPick: true,
-        rank: 1
+        rank: 1,
+        image: "https://fever.imgix.net/plan/photo/9c0a0c0e-8f5a-4e3d-9b2c-1a3b4c5d6e7f.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 2,
@@ -19,7 +20,8 @@ const experiencesData = [
         price: 33,
         category: "valentines-specials",
         topPick: true,
-        rank: 2
+        rank: 2,
+        image: "https://fever.imgix.net/plan/photo/code-173-fabrik.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 3,
@@ -29,7 +31,8 @@ const experiencesData = [
         price: 38,
         category: "concerts",
         topPick: true,
-        rank: 3
+        rank: 3,
+        image: "https://fever.imgix.net/plan/photo/jazz-room-nueva-orleans.jpg?auto=format&fit=crop&w=800&h=600"
     },
     // Candlelight Experiences
     {
@@ -38,7 +41,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Jan 25 - Mar 29",
         price: 59,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-queen.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 5,
@@ -46,7 +50,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Jan 18 - Mar 15",
         price: 53,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-hans-zimmer.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 6,
@@ -54,7 +59,8 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Jan 23 - May 15",
         price: 24,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-coldplay-imagine-dragons.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 7,
@@ -62,7 +68,8 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Mar 13 - May 15",
         price: 30,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-queen-abba.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 8,
@@ -70,7 +77,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Feb 8 - Mar 29",
         price: 54,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-ed-sheeran-coldplay.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 9,
@@ -78,7 +86,8 @@ const experiencesData = [
         location: "Círculo de Bellas Artes",
         date: "Jan 31 - Feb 28",
         price: 11,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-lago-cisnes.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 10,
@@ -86,7 +95,8 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Jan 16 - May 9",
         price: 35,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-mozart-bach.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 11,
@@ -94,7 +104,8 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Jan 17 - Jun 19",
         price: 32,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-beatles.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 12,
@@ -102,7 +113,8 @@ const experiencesData = [
         location: "Ateneo de Madrid",
         date: "Feb 6 - May 10",
         price: 30,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-abba.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 13,
@@ -110,7 +122,8 @@ const experiencesData = [
         location: "Ateneo de Madrid",
         date: "Feb 22 - Mar 8",
         price: 27,
-        category: "candlelight"
+        category: "candlelight",
+        image: "https://fever.imgix.net/plan/photo/candlelight-taylor-swift.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 14,
@@ -118,7 +131,8 @@ const experiencesData = [
         location: "Ilustre Colegio Oficial de Médicos de Madrid",
         date: "Feb 14",
         price: 27,
-        category: "valentines-specials"
+        category: "valentines-specials",
+        image: "https://fever.imgix.net/plan/photo/candlelight-san-valentin.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 15,
@@ -126,7 +140,8 @@ const experiencesData = [
         location: "Palacio de los Duques de Santoña",
         date: "Feb 14",
         price: 67,
-        category: "valentines-specials"
+        category: "valentines-specials",
+        image: "https://fever.imgix.net/plan/photo/candlelight-romance-clasico.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 16,
@@ -134,7 +149,8 @@ const experiencesData = [
         location: "Four Seasons Hotel Madrid",
         date: "Feb 15",
         price: 25,
-        category: "wellness"
+        category: "wellness",
+        image: "https://fever.imgix.net/plan/photo/candlelight-meditation.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 17,
@@ -142,7 +158,8 @@ const experiencesData = [
         location: "Restaurante El Jardín",
         date: "Feb 13 - Feb 15",
         price: 85,
-        category: "food"
+        category: "food",
+        image: "https://fever.imgix.net/plan/photo/cena-romantica-musica.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 18,
@@ -150,7 +167,8 @@ const experiencesData = [
         location: "Chocolatería San Ginés",
         date: "Feb 10 - Feb 16",
         price: 45,
-        category: "workshops"
+        category: "workshops",
+        image: "https://fever.imgix.net/plan/photo/taller-chocolate-parejas.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 19,
@@ -158,7 +176,8 @@ const experiencesData = [
         location: "Spa Gran Meliá",
         date: "Feb 1 - Feb 28",
         price: 120,
-        category: "wellness"
+        category: "wellness",
+        image: "https://fever.imgix.net/plan/photo/spa-romantico-dos.jpg?auto=format&fit=crop&w=800&h=600"
     },
     {
         id: 20,
@@ -166,7 +185,8 @@ const experiencesData = [
         location: "Café Central",
         date: "Feb 12 - Feb 15",
         price: 28,
-        category: "concerts"
+        category: "concerts",
+        image: "https://fever.imgix.net/plan/photo/jazz-romantico.jpg?auto=format&fit=crop&w=800&h=600"
     }
 ];
 
@@ -203,7 +223,12 @@ function renderTopPicks() {
     topPicksContainer.innerHTML = topPicks.map(exp => `
         <article class="top-pick-card" role="listitem" itemscope itemtype="https://schema.org/Event">
             <div class="top-pick-badge" aria-label="Top pick número ${exp.rank}">#${exp.rank}♥ TOP PICK</div>
-            <div class="top-pick-image" role="img" aria-label="Experiencia ${exp.title} en ${exp.location}">🕯️</div>
+            <div class="top-pick-image">
+                <img src="${exp.image || 'https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent(exp.title)}" 
+                     alt="${exp.title} en ${exp.location}" 
+                     loading="lazy"
+                     onerror="this.src='https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent('${exp.title}')">
+            </div>
             <div class="top-pick-content">
                 <h3 class="top-pick-title" itemprop="name">${exp.title}</h3>
                 <div class="top-pick-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
@@ -266,7 +291,12 @@ function renderExperiences() {
     
     gridContainer.innerHTML = filtered.map(exp => `
         <article class="experience-card" role="listitem" itemscope itemtype="https://schema.org/Event" onclick="handleGetTickets(${exp.id})">
-            <div class="experience-image" role="img" aria-label="Experiencia ${exp.title}">🕯️</div>
+            <div class="experience-image">
+                <img src="${exp.image || 'https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent(exp.title)}" 
+                     alt="${exp.title} en ${exp.location}" 
+                     loading="lazy"
+                     onerror="this.src='https://via.placeholder.com/800x600/ff6b9d/ffffff?text=' + encodeURIComponent('${exp.title}')">
+            </div>
             <div class="experience-content">
                 <h3 class="experience-title" itemprop="name">${exp.title}</h3>
                 <div class="experience-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
