@@ -65,7 +65,7 @@ const experiencesData = [
         category: "candlelight",
         topPick: true,
         rank: 1,
-        url: "https://feverup.com/madrid/e/candlelight-el-senor-de-los-anillos"
+        url: "https://feverup.com/m/524089"
     },
     {
         id: 2,
@@ -76,7 +76,7 @@ const experiencesData = [
         category: "valentines-specials",
         topPick: true,
         rank: 2,
-        url: "https://feverup.com/madrid/e/code-173-fabrik"
+        url: "https://feverup.com/m/502224"
     },
     {
         id: 3,
@@ -87,7 +87,7 @@ const experiencesData = [
         category: "concerts",
         topPick: true,
         rank: 3,
-        url: "https://feverup.com/madrid/e/jazz-room-nueva-orleans"
+        url: "https://feverup.com/m/250209"
     },
     // Candlelight Experiences
     {
@@ -97,7 +97,7 @@ const experiencesData = [
         date: "Jan 25 - Mar 29",
         price: 59,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-tributo-queen"
+        url: "https://feverup.com/m/198569"
     },
     {
         id: 5,
@@ -106,7 +106,7 @@ const experiencesData = [
         date: "Jan 18 - Mar 15",
         price: 53,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-hans-zimmer"
+        url: "https://feverup.com/m/118384"
     },
     {
         id: 6,
@@ -115,7 +115,7 @@ const experiencesData = [
         date: "Jan 23 - May 15",
         price: 24,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-coldplay-imagine-dragons"
+        url: "https://feverup.com/m/160548"
     },
     {
         id: 7,
@@ -124,7 +124,7 @@ const experiencesData = [
         date: "Mar 13 - May 15",
         price: 30,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-queen-abba"
+        url: "https://feverup.com/m/183038"
     },
     {
         id: 8,
@@ -133,7 +133,7 @@ const experiencesData = [
         date: "Feb 8 - Mar 29",
         price: 54,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-ed-sheeran-coldplay"
+        url: "https://feverup.com/m/491996"
     },
     {
         id: 9,
@@ -142,7 +142,7 @@ const experiencesData = [
         date: "Jan 31 - Feb 28",
         price: 11,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-lago-cisnes"
+        url: "https://feverup.com/m/136532"
     },
     {
         id: 10,
@@ -151,7 +151,7 @@ const experiencesData = [
         date: "Jan 16 - May 9",
         price: 35,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-mozart-bach"
+        url: "https://feverup.com/m/344700"
     },
     {
         id: 11,
@@ -160,7 +160,7 @@ const experiencesData = [
         date: "Jan 17 - Jun 19",
         price: 32,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-beatles"
+        url: "https://feverup.com/m/261562"
     },
     {
         id: 12,
@@ -169,7 +169,7 @@ const experiencesData = [
         date: "Feb 6 - May 10",
         price: 30,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-abba"
+        url: "https://feverup.com/m/139030"
     },
     {
         id: 13,
@@ -178,7 +178,7 @@ const experiencesData = [
         date: "Feb 22 - Mar 8",
         price: 27,
         category: "candlelight",
-        url: "https://feverup.com/madrid/e/candlelight-taylor-swift"
+        url: "https://feverup.com/m/107114"
     },
     {
         id: 14,
@@ -187,7 +187,7 @@ const experiencesData = [
         date: "Feb 14",
         price: 27,
         category: "valentines-specials",
-        url: "https://feverup.com/madrid/e/candlelight-san-valentin"
+        url: "https://feverup.com/m/519886"
     },
     {
         id: 15,
@@ -196,7 +196,7 @@ const experiencesData = [
         date: "Feb 14",
         price: 67,
         category: "valentines-specials",
-        url: "https://feverup.com/madrid/e/candlelight-romance-clasico"
+        url: "https://feverup.com/m/411236"
     },
     {
         id: 16,
@@ -205,7 +205,7 @@ const experiencesData = [
         date: "Feb 15",
         price: 25,
         category: "wellness",
-        url: "https://feverup.com/madrid/e/candlelight-meditation"
+        url: "https://feverup.com/m/481507"
     },
     {
         id: 17,
@@ -214,7 +214,7 @@ const experiencesData = [
         date: "Feb 13 - Feb 15",
         price: 85,
         category: "food",
-        url: "https://feverup.com/madrid/e/cena-romantica-musica"
+        url: "https://feverup.com/m/533582"
     },
     {
         id: 18,
@@ -223,7 +223,7 @@ const experiencesData = [
         date: "Feb 10 - Feb 16",
         price: 45,
         category: "workshops",
-        url: "https://feverup.com/madrid/e/taller-chocolate-parejas"
+        url: "https://feverup.com/m/475629"
     },
     {
         id: 19,
@@ -232,7 +232,7 @@ const experiencesData = [
         date: "Feb 1 - Feb 28",
         price: 120,
         category: "wellness",
-        url: "https://feverup.com/madrid/e/spa-romantico-dos"
+        url: "https://feverup.com/m/93624"
     },
     {
         id: 20,
@@ -241,7 +241,7 @@ const experiencesData = [
         date: "Feb 12 - Feb 15",
         price: 28,
         category: "concerts",
-        url: "https://feverup.com/madrid/e/jazz-romantico"
+        url: "https://feverup.com/m/250209"
     }
 ];
 
